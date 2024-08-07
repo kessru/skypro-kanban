@@ -9,6 +9,16 @@
   box-sizing: border-box;
 }
 
+.loader {
+  text-align: center;
+  margin-top: 20px;
+  color: #94A6BE;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 a,
 a:visited {
   text-decoration: none;
@@ -859,7 +869,7 @@ body {
 }
 
 .header__pop-user-set {
-  display: none;
+  display: block;
   position: absolute;
   top: 61px;
   right: 0;

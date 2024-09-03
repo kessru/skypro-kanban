@@ -1,13 +1,13 @@
 import { Card } from "../Card";
-// import { cardList, statusList } from "../../data";
+import * as S from "./column.styled.js"
 
 export const Column = ({ title, cards }) => {
     return (
-        <div className="main__column column">
-            <div className="column__title">
+        <S.MainColumn>
+            <S.ColumnTtl>
                 <p>{title}</p>
-            </div>
-            <div className="cards">
+            </S.ColumnTtl>
+            <S.Cards>
                 {cards.map((card) => {
                     return (
                         <Card
@@ -17,7 +17,7 @@ export const Column = ({ title, cards }) => {
                             date={card.date} />
                     )
                 })}
-            </div>
-        </div>
+            </S.Cards>
+        </S.MainColumn>
     )
 }

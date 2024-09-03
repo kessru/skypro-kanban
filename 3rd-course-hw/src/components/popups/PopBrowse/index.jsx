@@ -1,17 +1,18 @@
 import { Calendar } from "../../Calendar";
+import * as S from "./PopBrowse.styled.js"
 
 export const PopBrowse = () => {
     return (
-        <div className="pop-browse" id="popBrowse">
-            <div className="pop-browse__container">
-                <div className="pop-browse__block">
-                    <div className="pop-browse__content">
-                        <div className="pop-browse__top-block">
-                            <h3 className="pop-browse__ttl">Название задачи</h3>
+        <S.PopBrowse id="popBrowse">
+            <S.PopBrowseContainer>
+                <S.PopBrowseBlock>
+                    <S.PopBrowseContent>
+                        <S.PopBrowseTopBlock>
+                            <S.PopBrowseTtl>Название задачи</S.PopBrowseTtl>
                             <div className="categories__theme theme-top _orange _active-category">
                                 <p className="_orange">Web Design</p>
                             </div>
-                        </div>
+                        </S.PopBrowseTopBlock>
                         <div className="pop-browse__status status">
                             <p className="status__p subttl">Статус</p>
                             <div className="status__themes">
@@ -35,8 +36,8 @@ export const PopBrowse = () => {
                         <div className="pop-browse__wrap">
                             <form className="pop-browse__form form-browse" id="formBrowseCard" action="#">
                                 <div className="form-browse__block">
-                                    <label for="textArea01" className="subttl">Описание задачи</label>
-                                    <textarea className="form-browse__area" name="text" id="textArea01" readonly placeholder="Введите описание задачи..."></textarea>
+                                    <label htmlFor="textArea01" className="subttl">Описание задачи</label>
+                                    <textarea className="form-browse__area" name="text" id="textArea01" readOnly placeholder="Введите описание задачи..."></textarea>
                                 </div>
                             </form>
                             <Calendar />
@@ -63,10 +64,10 @@ export const PopBrowse = () => {
                             <button className="btn-edit__close _btn-bg _hover01"><a href="#">Закрыть</a></button>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </S.PopBrowseContent>
+                </S.PopBrowseBlock>
+            </S.PopBrowseContainer>
+        </S.PopBrowse>
 
     )
 }

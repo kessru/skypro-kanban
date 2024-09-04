@@ -1,40 +1,62 @@
 import React, { useState } from "react";
-export const Header = ({ addCard }) => {
+import { ContainerStyle } from "../Global.styled.js";
+import * as S from "./header.styled.js";
+import * as M from "./popUserSet.styled.js";
 
-    const [isOpen, setIsOpen] = useState(false);
+export const Header = ({ addCard, switchTheme, setSwitchTheme }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-    const toggleOpenUser = () => {
-        setIsOpen(!isOpen)
-    };
+  const toggleOpenUser = () => {
+    setIsOpen(!isOpen);
+  };
 
-    return (
-        <header className="header">
-            <div className="container">
-                <div className="header__block">
-                    <div className="header__logo _show _light">
-                        <a href="" target="_self"><img src="images/logo.png" alt="logo" /></a>
-                    </div>
-                    <div className="header__logo _dark">
-                        <a href="" target="_self"><img src="images/logo_dark.png" alt="logo" /></a>
-                    </div>
-                    <nav className="header__nav">
-                        <button className="header__btn-main-new _hover01" id="btnMainNew" onClick={addCard}><a>Создать новую задачу</a></button>
-                        <a className="header__user _hover02" onClick={toggleOpenUser}>Ivan Ivanov</a>
-                        {isOpen &&
-                            <div className="header__pop-user-set pop-user-set" id="user-set-target">
-                                {/* <!-- <a href="">x</a> --> */}
-                                <p className="pop-user-set__name">Ivan Ivanov</p>
-                                <p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
-                                <div className="pop-user-set__theme">
-                                    <p>Темная тема</p>
-                                    <input type="checkbox" className="checkbox" name="checkbox" />
-                                </div>
-                                <button type="button" className="_hover03"><a href="#popExit">Выйти</a></button>
-                            </div>
-                        }
-                    </nav>
-                </div>
-            </div>
-        </header>
-    )
-}
+  const onSwitchTheme = () => {
+    setSwitchTheme(switchTheme === "light" ? "dark" : "light");
+  };
+
+  return (
+    <S.Header>
+      <ContainerStyle>
+        <S.HeaderBlock>
+          <S.HeaderLogo>
+            <a href="" target="_self">
+              <img
+                src={
+                  switchTheme === "light"
+                    ? "images/logo.png"
+                    : "images/logo_dark.png"
+                }
+                alt="logo"
+              />
+            </a>
+          </S.HeaderLogo>
+          <S.HeaderNav>
+            <S.HeaderBtnNew onClick={addCard}>
+              <a>Создать новую задачу</a>
+            </S.HeaderBtnNew>
+            <S.HeaderUser onClick={toggleOpenUser}>Ivan Ivanov</S.HeaderUser>
+            {isOpen && (
+              <M.PopUserSetHeader id="user-set-target">
+                {/* <!-- <a href="">x</a> --> */}
+                <M.PopUserSetName>Ivan Ivanov</M.PopUserSetName>
+                <M.PopUserSetMail>ivan.ivanov@gmail.com</M.PopUserSetMail>
+                <M.PopUserSetTheme>
+                  <p>Темная тема</p>
+                  <M.ThemeCheckbox
+                    checked={switchTheme === "dark"}
+                    onClick={onSwitchTheme}
+                    type="checkbox"
+                    name="checkbox"
+                  />
+                </M.PopUserSetTheme>
+                <M.PopUserSetButton type="button">
+                  <a href="#popExit">Выйти</a>
+                </M.PopUserSetButton>
+              </M.PopUserSetHeader>
+            )}
+          </S.HeaderNav>
+        </S.HeaderBlock>
+      </ContainerStyle>
+    </S.Header>
+  );
+};

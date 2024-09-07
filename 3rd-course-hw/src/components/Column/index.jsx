@@ -1,5 +1,5 @@
-import { Card } from "../Card";
-import * as S from "./column.styled.js"
+import { Card } from '../Card'
+import * as S from './column.styled.js'
 
 export const Column = ({ title, cards }) => {
     return (
@@ -12,9 +12,11 @@ export const Column = ({ title, cards }) => {
                     return (
                         <Card
                             key={card.id}
+                            id={card.id}
                             title={card.title}
                             topic={card.topic}
-                            date={card.date} />
+                            date={card.date}
+                        />
                     )
                 })}
             </S.Cards>

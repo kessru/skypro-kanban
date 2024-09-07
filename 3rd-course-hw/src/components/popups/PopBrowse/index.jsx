@@ -1,14 +1,20 @@
-import { Calendar } from "../../Calendar";
-import * as S from "./PopBrowse.styled.js"
+import { Link, useParams } from 'react-router-dom'
+import { routes } from '../../../router/routes.js'
+import { Calendar } from '../../Calendar'
+import * as S from './PopBrowse.styled.js'
 
 export const PopBrowse = () => {
+    const { id } = useParams()
+
     return (
         <S.PopBrowse id="popBrowse">
             <S.PopBrowseContainer>
                 <S.PopBrowseBlock>
                     <S.PopBrowseContent>
                         <S.PopBrowseTopBlock>
-                            <S.PopBrowseTtl>Название задачи</S.PopBrowseTtl>
+                            <S.PopBrowseTtl>
+                                Название задачи {id}
+                            </S.PopBrowseTtl>
                             <div className="categories__theme theme-top _orange _active-category">
                                 <p className="_orange">Web Design</p>
                             </div>
@@ -34,10 +40,25 @@ export const PopBrowse = () => {
                             </div>
                         </div>
                         <div className="pop-browse__wrap">
-                            <form className="pop-browse__form form-browse" id="formBrowseCard" action="#">
+                            <form
+                                className="pop-browse__form form-browse"
+                                id="formBrowseCard"
+                                action="#"
+                            >
                                 <div className="form-browse__block">
-                                    <label htmlFor="textArea01" className="subttl">Описание задачи</label>
-                                    <textarea className="form-browse__area" name="text" id="textArea01" readOnly placeholder="Введите описание задачи..."></textarea>
+                                    <label
+                                        htmlFor="textArea01"
+                                        className="subttl"
+                                    >
+                                        Описание задачи
+                                    </label>
+                                    <textarea
+                                        className="form-browse__area"
+                                        name="text"
+                                        id="textArea01"
+                                        readOnly
+                                        placeholder="Введите описание задачи..."
+                                    ></textarea>
                                 </div>
                             </form>
                             <Calendar />
@@ -50,24 +71,39 @@ export const PopBrowse = () => {
                         </div>
                         <div className="pop-browse__btn-browse ">
                             <div className="btn-group">
-                                <button className="btn-browse__edit _btn-bor _hover03"><a href="#">Редактировать задачу</a></button>
-                                <button className="btn-browse__delete _btn-bor _hover03"><a href="#">Удалить задачу</a></button>
+                                <button className="btn-browse__edit _btn-bor _hover03">
+                                    <a href="#">Редактировать задачу</a>
+                                </button>
+                                <button className="btn-browse__delete _btn-bor _hover03">
+                                    <a href="#">Удалить задачу</a>
+                                </button>
                             </div>
-                            <button className="btn-browse__close _btn-bg _hover01"><a href="#">Закрыть</a></button>
+                            <button className="btn-browse__close _btn-bg _hover01">
+                                <Link to={routes.main}>Закрыть</Link>
+                            </button>
                         </div>
                         <div className="pop-browse__btn-edit _hide">
                             <div className="btn-group">
-                                <button className="btn-edit__edit _btn-bg _hover01"><a href="#">Сохранить</a></button>
-                                <button className="btn-edit__edit _btn-bor _hover03"><a href="#">Отменить</a></button>
-                                <button className="btn-edit__delete _btn-bor _hover03" id="btnDelete"><a href="#">Удалить задачу</a></button>
+                                <button className="btn-edit__edit _btn-bg _hover01">
+                                    <a href="#">Сохранить</a>
+                                </button>
+                                <button className="btn-edit__edit _btn-bor _hover03">
+                                    <a href="#">Отменить</a>
+                                </button>
+                                <button
+                                    className="btn-edit__delete _btn-bor _hover03"
+                                    id="btnDelete"
+                                >
+                                    <a href="#">Удалить задачу</a>
+                                </button>
                             </div>
-                            <button className="btn-edit__close _btn-bg _hover01"><a href="#">Закрыть</a></button>
+                            <button className="btn-edit__close _btn-bg _hover01">
+                                <a href="#">Закрыть</a>
+                            </button>
                         </div>
-
                     </S.PopBrowseContent>
                 </S.PopBrowseBlock>
             </S.PopBrowseContainer>
         </S.PopBrowse>
-
     )
 }

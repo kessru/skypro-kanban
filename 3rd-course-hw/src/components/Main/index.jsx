@@ -1,8 +1,8 @@
-import { Column } from "../Column";
+import { Column } from '../Column'
 // import React, { useState } from "react";
-import { statusList } from "../../data";
-import * as S from "./main.styled.js"
-import { ContainerStyle } from "../Global.styled.js";
+import { statusList } from '../../data'
+import * as S from './main.styled.js'
+import { ContainerStyle } from '../Global.styled.js'
 
 export const Main = ({ cards }) => {
     return (
@@ -14,12 +14,14 @@ export const Main = ({ cards }) => {
                             <Column
                                 key={i}
                                 title={status}
-                                cards={cards.filter((card) => card.status === status)} />
-
+                                cards={cards.filter(
+                                    (card) => card.status === status,
+                                )}
+                            />
                         ))}
                     </S.MainContent>
                 </S.MainBlock>
             </ContainerStyle>
-        </S.Main >
+        </S.Main>
     )
 }

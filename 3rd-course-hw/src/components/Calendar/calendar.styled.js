@@ -1,84 +1,84 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Calendar = styled.div`
-  width: 182px;
-  margin-bottom: 20px;
+    width: 182px;
+    margin-bottom: 20px;
 `
 
 export const CalendarTtl = styled.p`
-  margin-bottom: 14px;
-  padding: 0 7px;
-  color: #000;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
+    margin-bottom: 14px;
+    padding: 0 7px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
 `
 
 export const CalendarBlock = styled.div`
-  display: block;
+    display: block;
 `
 
 export const CalendarNav = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 14px;
-  padding: 0 7px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding: 0 7px;
 `
 
 export const CalendarMonth = styled.div`
-  color: #94A6BE;
-  font-size: 14px;
-  line-height: 25px;
-  font-weight: 600;
+    color: #94a6be;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 600;
 `
 
 export const NavActions = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `
 
 export const NavAction = styled.div`
-  width: 18px;
-  height: 25px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 18px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  svg {
-  fill: #94A6BE;
+    svg {
+        fill: #94a6be;
     }
 `
 
 export const CalendarContent = styled.div`
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 `
 
 export const CalendarDaysNames = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
-  margin: 7px 0;
-  padding: 0 7px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 7px 0;
+    padding: 0 7px;
 `
 
 export const CalendarCells = styled.div`
-  width: 182px;
-  height: 126px;
-  display: flex;
-  flex-wrap: wrap;
+    width: 182px;
+    height: 126px;
+    display: flex;
+    flex-wrap: wrap;
 `
 
 export const CalendarDayName = styled.div`
-  color: #94A6BE;
-  font-size: 10px;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.2px;
+    color: #94a6be;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.2px;
 `
 
 // export const CalendarCell = styled.div`
@@ -98,15 +98,15 @@ export const CalendarDayName = styled.div`
 // `
 
 export const CalendarPeriod = styled.div`
-  padding: 0 7px;
+    padding: 0 7px;
 `
 
 export const CalendarP = styled.p`
-  color: #94A6BE;
-  font-size: 10px;
-  line-height: 1;
+    color: #94a6be;
+    font-size: 10px;
+    line-height: 1;
 
-  span {
-  color: #000000;
-  }
+    span {
+        color: #000000;
+    }
 `

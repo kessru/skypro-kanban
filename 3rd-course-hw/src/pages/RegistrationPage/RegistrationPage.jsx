@@ -2,12 +2,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import * as S from './registrationPage.styled.js'
 import { routes } from '../../router/routes.js'
 
-export const RegistrationPage = ({ setIsAuth }) => {
+export const RegistrationPage = ({ setUser }) => {
     const navigate = useNavigate()
 
     const handleRegistration = (e) => {
         e.preventDefault()
-        setIsAuth(true)
+        setUser(true)
         navigate(routes.main)
     }
 

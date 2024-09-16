@@ -20,7 +20,7 @@ export const LoginPage = ({ setUser }) => {
             return
         }
 
-        signIn({ loginData })
+        signIn(loginData)
             .then((res) => {
                 setUser(res.user)
                 navigate(routes.main)
@@ -68,7 +68,9 @@ export const LoginPage = ({ setUser }) => {
                                 id="formpassword"
                                 placeholder="Пароль"
                             />
-                            {errorMessage && <p>{errorMessage}</p>}
+                            {errorMessage && (
+                                <S.ErrorMessage>{errorMessage}</S.ErrorMessage>
+                            )}
                             <S.ModalBtnEnter type="submit" id="btnEnter">
                                 Войти
                             </S.ModalBtnEnter>

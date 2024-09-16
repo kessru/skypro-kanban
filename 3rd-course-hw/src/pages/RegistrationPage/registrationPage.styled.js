@@ -123,6 +123,15 @@ export const ModalBtnEnter = styled.button`
         height: 40px;
     }
 `
+export const ErrorMessage = styled.p`
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.28px;
+    color: #94a6be;
+`
 
 export const ModalFormGroup = styled.div`
     text-align: center;

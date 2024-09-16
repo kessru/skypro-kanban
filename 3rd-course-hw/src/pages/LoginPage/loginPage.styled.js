@@ -99,6 +99,16 @@ export const ModalInput = styled.input`
     }
 `
 
+export const ErrorMessage = styled.p`
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.28px;
+    color: #94a6be;
+`
+
 export const ModalBtnEnter = styled.button`
     width: 100%;
     height: 30px;
